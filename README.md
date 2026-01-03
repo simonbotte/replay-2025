@@ -38,6 +38,16 @@ yarn dev
 bun run dev
 ```
 
+## Recording
+
+Record a 1080x1920, 60fps video using Puppeteer + ffmpeg:
+
+```bash
+npm run record -- --url http://localhost:3000 --duration 10
+```
+
+Optional flags: `--out`, `--wait`, `--headful`, `--fps`.
+
 ## Production
 
 Build the application for production:

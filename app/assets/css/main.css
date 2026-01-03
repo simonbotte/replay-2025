@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: "Termina";
+    src: url("../fonts/Termina-Thin.woff2") format("woff2");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Termina";
+    src: url("../fonts/Termina-ExtraLight.woff2") format("woff2");
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Termina";
+    src: url("../fonts/Termina-Light.woff2") format("woff2");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Termina";
+    src: url("../fonts/Termina-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Termina";
+    src: url("../fonts/Termina-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Termina";
+    src: url("../fonts/Termina-Demi.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Termina";
+    src: url("../fonts/Termina-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Termina";
+    src: url("../fonts/Termina-Heavy.woff2") format("woff2");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Termina";
+    src: url("../fonts/Termina-Black.woff2") format("woff2");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@theme {
+    --font-sans: "Termina", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+    body {
+        font-family: var(--font-sans);
+        text-transform: uppercase;
+    }
+
+    .shape-flower {
+        position: relative;
+        isolation: isolate;
+    }
+
+    .shape-flower::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg width='471' height='471' viewBox='0 0 471 471' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M137.89 40.3871C84.0404 40.3871 40.387 84.0406 40.387 137.89C40.387 191.74 84.0404 235.392 137.89 235.392C84.0404 235.392 40.387 279.045 40.387 332.895C40.387 386.745 84.0404 430.398 137.89 430.398C191.74 430.398 235.392 386.745 235.392 332.895C235.392 386.745 279.045 430.398 332.895 430.398C386.745 430.398 430.398 386.745 430.398 332.895C430.398 279.045 386.745 235.392 332.895 235.392C386.745 235.392 430.398 191.74 430.398 137.89C430.398 84.0406 386.745 40.3871 332.895 40.3871C279.045 40.3871 235.392 84.0406 235.392 137.89C235.392 84.0406 191.74 40.3871 137.89 40.3871Z' fill='%23EB5E0C'/%3E%3Cpath d='M28.5579 166.448C-9.51929 204.525 -9.51929 266.26 28.5579 304.337C66.6356 342.415 128.37 342.414 166.447 304.337C128.37 342.414 128.37 404.149 166.447 442.227C204.525 480.305 266.26 480.304 304.337 442.227C342.415 404.149 342.415 342.415 304.337 304.337C342.415 342.415 404.149 342.415 442.227 304.337C480.304 266.26 480.304 204.525 442.227 166.448C404.149 128.37 342.415 128.37 304.337 166.448C342.415 128.37 342.415 66.6358 304.337 28.5581C266.26 -9.51906 204.525 -9.51966 166.447 28.5581C128.37 66.6358 128.37 128.371 166.447 166.448C128.37 128.371 66.6356 128.37 28.5579 166.448Z' fill='%23EB5E0C'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        animation: flower-spin 18s linear infinite;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .shape-flower > * {
+        position: relative;
+        z-index: 1;
+    }
+
+    @keyframes flower-spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .cinema-slider {
+        width: 100%;
+        transition-timing-function: ease-in-out;
+    }
+
+    .cinema-slider .swiper-wrapper {
+        align-items: flex-end;
+        transition-timing-function: ease-in-out;
+    }
+
+    .cinema-slider .swiper-slide {
+        width: 600px;
+        display: flex !important;
+        align-items: flex-end !important;
+        justify-content: center;
+    }
+
+    .cinema-slide-image {
+        height: 800px;
+        width: 100%;
+        object-fit: cover;
+        transition: height 1s ease, width 1s ease;
+    }
+
+    .cinema-slider .swiper-slide-active .cinema-slide-image {
+        height: 1000px;
+        width: 750px;
+    }
+}
